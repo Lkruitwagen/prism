@@ -1,0 +1,30 @@
+[project]
+name = "prism"
+version = "0.1.0"
+description = "Modelling UK energy supply by unmixing the dark side of the BMUnit."
+requires-python = ">=3.13"
+dependencies = [
+    "requests",
+    "pandas",
+    "pyarrow",
+    "geopandas",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pre-commit",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
