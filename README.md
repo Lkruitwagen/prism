@@ -44,4 +44,4 @@ Scripts live in `scripts/` and are run with `uv run python scripts/<script_name>
 - [Elexon BMRS API](https://data.elexon.co.uk/bmrs/api/v1/reference/bmunits/all) — BM Unit reference catalogue.
 - [Elexon BMRS B1610 stream](https://data.elexon.co.uk/bmrs/api/v1/datasets/B1610/stream) — Actual generation output per generating unit.
 - [DUKES 5.11](https://www.gov.uk/government/statistics/digest-of-uk-energy-statistics-dukes) — UK power plant data from the Digest of UK Energy Statistics (table 5.11), including technology, fuel type, capacity, and grid connection.
-- [NESO GSP Regions](https://data.nationalgrideso.com/) — Grid Supply Point (GSP) region boundaries in GeoJSON format (EPSG 4326), used to assign plants to GSP groups.
+- [NESO GSP Regions](https://data.nationalgrideso.com/) — Grid Supply Point (GSP) region boundaries in GeoJSON format (EPSG 4326), used to assign plants to GSP groups. The data geometries were siplified 80% using Douglas-Peucker and [https://mapshaper.org/].
