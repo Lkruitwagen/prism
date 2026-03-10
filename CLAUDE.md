@@ -72,6 +72,15 @@ Six scripts in `scripts/`:
 - GSP geojson has `GSPs` and `GSPGroup` properties; dissolve on `GSPGroup` yields 14 regions.
 - ~99 plants are unmatched to a GSP group (Northern Ireland, offshore wind) — expected.
 
+### Notebook exploration notes (TASK 04)
+- `notebooks/04_explore_bm_units.ipynb` — explores DUKES/BM unit matches with three plots
+- DUKES must be sorted by `parse_capacity` descending (strip whitespace from capacity string) before using matches.json indices — the matching script uses this sort order
+- B1610 quantity is in MW (average over 30-min period); multiply by 0.5 to get MWh per period
+- 26 DUKES plants matched → 81 BM units; matched series include bioenergy, CCGT, nuclear, pumped-hydro, wind
+- Negative B1610 quantities (demand, pumping, interconnector import) stacked below x-axis in stacked area plot
+- `nbconvert` output path: pass just the filename (not full path) when notebook is inside a subdir, to avoid double-prefixing; executed notebook replaces source
+- `nbconvert`, `nbformat`, `nbclient`, `ipykernel` added as deps for notebook execution
+
 ### ERA5 weather data notes
 - Source: `gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3` (public, anonymous access via `token="anon"`)
 - Variables: `100m_u/v_component_of_wind`, `2m_temperature`, `surface_solar_radiation_downwards`, `total_precipitation`, plus derived `100m_wind_speed`
