@@ -17,6 +17,10 @@ dependencies = [
     "cftime>=1.6.5",
     "scipy>=1.17.1",
     "matplotlib>=3.10.8",
+    "nbconvert>=7.17.0",
+    "nbformat>=5.10.4",
+    "nbclient>=0.10.4",
+    "ipykernel>=7.2.0",
 ]
 
 [project.optional-dependencies]
@@ -31,6 +35,7 @@ build-backend = "hatchling.build"
 
 [tool.ruff]
 line-length = 100
+exclude = ["*.ipynb"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
