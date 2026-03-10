@@ -81,6 +81,17 @@ Six scripts in `scripts/`:
 - `nbconvert` output path: pass just the filename (not full path) when notebook is inside a subdir, to avoid double-prefixing; executed notebook replaces source
 - `nbconvert`, `nbformat`, `nbclient`, `ipykernel` added as deps for notebook execution
 
+### Power curve fitting notes (TASK 05)
+- `prism/wind.py` — **`wind_power`**: 5-param physical model (capacity, v_cutin, v_rated, k, v_cutout); `jnp.clip(norm, 1e-4, 1.0)` to avoid `0^k` NaN gradients when k<1; smooth cutin/cutout via `jax.nn.sigmoid` (NOT custom jnp.where sigmoid — NaN gradients for large inputs); **`wind_power_weibull`** kept for comparison (lacks plateau, fits poorly above rated speed)
+- `prism/solar.py` — Linear P = scale × G (W/m²); `solar_radiation` is SSRD from ERA5 in W/m² (not accumulated J/m²)
+- `prism/fit.py` — `scipy.optimize.minimize` (L-BFGS-B) + `jax.value_and_grad`; quantile loss default **tau=0.5** (median regression — fits through bulk of data, unbiased under symmetric ERA5 noise); use tau>0.5 only for explicit upper-envelope fitting
+- `prism/met.py` — ERA5 load + nearest-point sampling for wind speed and solar radiation
+- `prism/bmdata.py` — B1610 loader; datetime = settlementDate + (period-1)*30min (period-start convention)
+- `prism/cli.py` — `prism fit` command; auto-detects wind/solar from DUKES Technology field
+- `notebooks/05_fitting_power_curves.ipynb` — end-to-end example: Hornsea 01, Jan-Feb 2026
+- Hornsea 01 fitted capacity ~590 MW (3 BM units: T_HOWAO-1/2/3), scale λ≈7.4 m/s, shape k≈2.4–3.0; 33% of periods show curtailment
+- ERA5 SSRD units are W/m² (instantaneous), not accumulated J/m²
+
 ### ERA5 weather data notes
 - Source: `gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3` (public, anonymous access via `token="anon"`)
 - Variables: `100m_u/v_component_of_wind`, `2m_temperature`, `surface_solar_radiation_downwards`, `total_precipitation`, plus derived `100m_wind_speed`
