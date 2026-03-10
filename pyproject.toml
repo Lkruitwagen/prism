@@ -8,6 +8,15 @@ dependencies = [
     "pandas",
     "pyarrow",
     "geopandas",
+    "rich",
+    "rapidfuzz",
+    "xarray>=2026.2.0",
+    "zarr>=3.1.5",
+    "gcsfs>=2026.2.0",
+    "numpy>=2.4.3",
+    "cftime>=1.6.5",
+    "scipy>=1.17.1",
+    "matplotlib>=3.10.8",
 ]
 
 [project.optional-dependencies]
@@ -28,3 +37,8 @@ select = ["E", "F", "I"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.5",
+]
