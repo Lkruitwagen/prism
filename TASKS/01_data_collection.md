@@ -38,3 +38,17 @@ We have the Grid Supply Point map from NESO @data/GSP_regions_4326_20250109.geoj
 We will want to first dissolve this data to the `GSPGroup`. 
 Dissolve the geodataframe and then spatially join the GSPGroup onto the dukes data.
 Save the cleaned and joined DUKES data as @data/dukes_clean.csv.
+
+## Script 4: Collect Missing BMUnit details
+
+Not all the BM unit details are available from the elexon reference API.
+[netareports.com](https://www.netareports.com/data/elexon/bmu.jsp) offers a more complete source.
+The available bm units are listed in @data/netalist.html.
+At each link is a table, an example given in @data/netablob.html.
+The scripts should do the following:
+  - prepare an html parser to extract data from the table in netablob.html
+  - parse the BM Units and corresponding neta links in netalist.html
+  - load all the data downloaded in script 2 and obtain the unique BM Unit IDs
+  - load the BM unit catalogue downloaded in script 1. Get the unique BM Unit IDs that are not in the catalog, but have any reported quantity greater or less than zero.
+  - For these missing BM Unit IDs, retrieve the link to the corresponding neta report from the neta list.
+  - iterate through the missing BM Unit IDs, retrieving the table details. Pause for 5s between retrievals.
