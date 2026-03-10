@@ -46,11 +46,17 @@ Source code lives in `prism/`. Tests live in `tests/`.
 
 ## Data Pipeline
 
-Three data collection scripts in `scripts/`:
+Four data collection scripts in `scripts/`:
 
 1. `fetch_bm_unit_catalogue.py` — BM Unit reference data → `data/bm_unit_catalogue.parquet`
 2. `fetch_b1610_generation.py` — Daily generation output → `data/b1610/<date>.parquet`
 3. `prepare_dukes.py` — Cleaned power plant data → `data/dukes_clean.csv`
+4. `fetch_missing_bm_unit_details.py` — NETA details for BM units missing from catalogue → `data/missing_bm_unit_details.parquet`
+
+### NETA data notes
+- `data/netalist.html`: `<select>` element; each `<option value="URL">description (BM_UNIT_ID)</option>`. 11,047 units listed.
+- `data/netablob.html`: example detail table; key-value rows where values may span multiple time-period columns (different `colspan`). Parser takes the last non-empty value per row (most recent).
+- 1,243 B1610 units with non-zero quantity are absent from the Elexon catalogue; all 1,243 have NETA entries.
 
 ### DUKES data notes
 - `data/dukes_5_11.csv` coordinates are in EPSG 27700 (British National Grid); zero values mean missing.
