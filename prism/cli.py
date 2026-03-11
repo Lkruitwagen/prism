@@ -407,7 +407,7 @@ def infer(
     if bucket:
         import gcsfs
 
-        dest = f"{bucket}/inference_{date_str}.json"
+        dest = f"{bucket}/data/inference_{date_str}.json"
         click.echo(f"Uploading to gs://{dest} ...")
         fs = gcsfs.GCSFileSystem()
         with fs.open(dest, "w") as fp:
