@@ -284,8 +284,6 @@ def solve_gsp_assignment(
     G = G.sel(asset=G.sum("time") > 0)
     B = B.sel(supplier=B.sum("time") > 0)
 
-    breakpoint()
-
     if G.sizes["asset"] == 0 or B.sizes["supplier"] == 0:
         return {}
 
@@ -323,7 +321,7 @@ def solve_gsp_assignment(
 
     m.solve(
         "highs",
-        solver_options={"mip_rel_gap": 0.05},  # 5% optimality gap
+        time_limit=15 * 60,  # 15 minutes
         io_api="direct",
     )
 
