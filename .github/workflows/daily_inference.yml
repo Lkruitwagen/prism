@@ -1,0 +1,39 @@
+name: Daily Inference
+
+on:
+  schedule:
+    - cron: '0 2 * * *'   # 02:00 UTC — ERA5 archive is typically 10+ days behind
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date to infer (YYYY-MM-DD). Defaults to today minus 10 days.'
+        required: false
+
+jobs:
+  infer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Run inference
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            uv run prism infer --date "${{ github.event.inputs.date }}"
+          else
+            uv run prism infer
+          fi
+        env:
+          GCS_BUCKET: ${{ vars.GCS_BUCKET }}
