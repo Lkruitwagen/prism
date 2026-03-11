@@ -3,7 +3,7 @@
 # PRISM
 Modelling UK energy supply by unmixing the dark side of VPP BM Units.
 
-View UI [here].
+View UI [here](https://3c3a2f9b.prism-kzi.pages.dev/).
 
 ## Problem Statement
 
@@ -11,6 +11,8 @@ One of the largest costs for energy market participants is imbalance costs; one 
 
 Accurately forecasting the system imbalance price requires forecasting system supply and demand.
 Energy system supply is increasingly driven by renewable energy availability - the sun and wind - and the UK has large amounts of both.
+_The challenge this work addresses is getting detailed, asset-level data that you can use to fit power curves for wind and solar assets_.
+
 This project will develop a model of asset-level solar and wind energy supply using real physical generation data.
 The problem this work addresses are two-fold:
   - first, where asset-level physical generation data is available, we will fit power curves for wind or solar generation
