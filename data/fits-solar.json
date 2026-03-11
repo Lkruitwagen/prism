@@ -1,0 +1,53 @@
+[
+  {
+    "bm_units": [
+      "E_BURWB-2"
+    ],
+    "fits": [
+      {
+        "lat": 52.28771089244749,
+        "lon": 0.3003959221970314,
+        "fit_params": {
+          "scale (MW per W/m\u00b2)": 1.4262935318716563e-06,
+          "plant_type": "solar",
+          "converged": true,
+          "loss": 0.7440961599349976
+        }
+      }
+    ]
+  },
+  {
+    "bm_units": [
+      "C__DTGPL001"
+    ],
+    "fits": [
+      {
+        "lat": 52.82444471274801,
+        "lon": -2.809575643290317,
+        "fit_params": {
+          "scale (MW per W/m\u00b2)": 0.006244299327412012,
+          "plant_type": "solar",
+          "converged": true,
+          "loss": 0.06123778596520424
+        }
+      }
+    ]
+  },
+  {
+    "bm_units": [
+      "T_SUTBS-1"
+    ],
+    "fits": [
+      {
+        "lat": 52.75711809852372,
+        "lon": 0.1930966426772793,
+        "fit_params": {
+          "scale (MW per W/m\u00b2)": 0.016965202359232618,
+          "plant_type": "solar",
+          "converged": true,
+          "loss": 0.1887241154909134
+        }
+      }
+    ]
+  }
+]
