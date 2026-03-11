@@ -3,7 +3,7 @@
 # PRISM
 Modelling UK energy supply by unmixing the dark side of VPP BM Units.
 
-View UI [here](https://3c3a2f9b.prism-kzi.pages.dev/).
+View UI [here](https://head.prism-kzi.pages.dev).
 
 ## Problem Statement
 
