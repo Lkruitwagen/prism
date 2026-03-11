@@ -133,6 +133,19 @@ html, body, #root {
   display: block;
 }
 
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+  color: var(--muted);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  transition: color 0.15s;
+}
+.github-link:hover { color: var(--text); }
+
 /* ── Date navigation ── */
 .date-nav {
   display: flex;
