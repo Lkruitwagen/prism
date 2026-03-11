@@ -92,6 +92,17 @@ Six scripts in `scripts/`:
 - Hornsea 01 fitted capacity ~590 MW (3 BM units: T_HOWAO-1/2/3), scale λ≈7.4 m/s, shape k≈2.4–3.0; 33% of periods show curtailment
 - ERA5 SSRD units are W/m² (instantaneous), not accumulated J/m²
 
+### Assignment notes (TASK 06)
+- `prism/assignment.py` — MILP assignment of unmatched wind/solar DUKES plants to supplier BM units
+- Supplier BM units have `bmUnitType == 'S'` in catalogue; 289 units across 14 GSP groups
+- MILP formulation: binary x[asset, supplier]; maximise assigned generation; constraints: each asset to ≤1 supplier, don't over-assign supplier capacity
+- Uses linopy + HiGHs (highspy package); `m.solve('highs', io_api='direct')` returns a tuple; check `m.termination_condition == 'optimal'`
+- `InstalledCapacity (MW)` in DUKES has `\t` tab prefix — strip whitespace before parsing
+- 951 unmatched wind/solar assets across 14 GSP groups; solved per-group independently
+- `prism/cli.py` — `prism assign` command; `--gsp-group` option accepts a single GSP ID or 'all'
+- Output: `data/assignment.json` — dict {dukes_index_str: {bm_unit_id, site_name, lat, lon, tech, capacity_mw, gsp_group, estimated_generation}}
+- Dependencies added: `linopy>=0.6.5`, `highspy>=1.13.1`
+
 ### ERA5 weather data notes
 - Source: `gs://gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3` (public, anonymous access via `token="anon"`)
 - Variables: `100m_u/v_component_of_wind`, `2m_temperature`, `surface_solar_radiation_downwards`, `total_precipitation`, plus derived `100m_wind_speed`
@@ -100,3 +111,15 @@ Six scripts in `scripts/`:
 - Longitude is native [0, 360]; roll to [-180, 180] before filtering
 - Interpolation to half-hourly requires `scipy` (xarray uses `scipy.interpolate.interp1d`)
 - Output shape: (2831 timesteps × 41 lat × 49 lon), ~260 MB as NetCDF
+
+### Orchestration notes (TASK 07)
+- `prism/fetch.py` — `fetch_b1610_day(date, output_dir)` and `fetch_era5_day(date)` for single-day fetches
+- `prism/inference.py` — `run_inference(date_str, data_path, fits_wind_path, fits_solar_path, assignment_path)` → JSON-serialisable dict
+- `prism/cli.py` — `prism infer` command; `--date` (defaults to today - `--lag` days, default lag=10); `--bucket` reads `GCS_BUCKET` env var
+- Output: `data/inference_<YYYY-MM-DD>.json` — `{date, bm_unit_quantities: {unit_id: {period: MW}}, plant_generation: [...]}`
+- `plant_generation` entries have `source: "matched"` (uses fitted params from fits-wind/solar.json) or `source: "unmatched"` (uses default params scaled to DUKES capacity)
+- `data/fits-wind.json` and `data/fits-solar.json` are checked in so they're available in the GitHub runner
+- `.github/workflows/daily_inference.yml` — cron `0 2 * * *`; uses `google-github-actions/auth@v2` with `GCP_SA_KEY` secret; `GCS_BUCKET` from GitHub vars
+- `gcsfs` (already a dep) handles GCS upload via Application Default Credentials set by the auth action
+- ERA5 is fetched fresh each day (one day = small, fast); 10-day default lag ensures archive availability
+- For DatetimeIndex filtering by date: `series[series.index.date == d]` (not `.iloc` with boolean array)

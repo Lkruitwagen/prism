@@ -1,6 +1,8 @@
-"""CLI entrypoint for fitting asset-level power curves."""
+"""CLI entrypoint for fitting asset-level power curves and assignment."""
 
 import json
+import logging
+from datetime import date, timedelta
 from pathlib import Path
 
 import click
@@ -273,6 +275,144 @@ def fit(
     click.echo(
         f"\nSaved {len(output_records)} new fit(s) to {output_path}  ({len(merged)} total records)"
     )
+
+
+@cli.command()
+@click.option("--start", required=True, help="Start date (YYYY-MM-DD, inclusive)")
+@click.option("--end", required=True, help="End date (YYYY-MM-DD, inclusive)")
+@click.option(
+    "--gsp-group",
+    "gsp_group",
+    default="all",
+    show_default=True,
+    help="GSP group to solve (e.g. '_A') or 'all' to run every group in sequence.",
+)
+@click.option("--data-dir", default="data", show_default=True, help="Root data directory")
+@click.option(
+    "--output",
+    default="data/assignment.json",
+    show_default=True,
+    help="Output JSON file for the asset-to-supplier assignment",
+)
+@click.option("-v", "--verbose", is_flag=True, default=False, help="Enable verbose logging")
+def assign(
+    start: str,
+    end: str,
+    gsp_group: str,
+    data_dir: str,
+    output: str,
+    verbose: bool,
+) -> None:
+    """Assign unmatched wind/solar DUKES plants to supplier BM units via MILP.
+
+    Solves one mixed-integer linear programme per GSP group, minimising the
+    total unexplained supplier-unit generation.  Results are persisted as JSON.
+    """
+    from prism.assignment import run_assignment
+
+    log_level = logging.DEBUG if verbose else logging.INFO
+    logging.basicConfig(level=log_level, format="%(levelname)s %(message)s")
+
+    click.echo(f"Running assignment  start={start}  end={end}  gsp_group={gsp_group}")
+    run_assignment(
+        data_path=Path(data_dir),
+        start=start,
+        end=end,
+        gsp_group=gsp_group,
+        output_path=Path(output),
+    )
+    click.echo(f"Done — results written to {output}")
+
+
+@cli.command()
+@click.option(
+    "--date",
+    "date_str",
+    default=None,
+    help="Date to infer (YYYY-MM-DD). Defaults to today minus --lag days.",
+)
+@click.option(
+    "--lag",
+    default=10,
+    show_default=True,
+    help="Days lag from today when --date is not specified (ERA5 availability buffer).",
+)
+@click.option("--data-dir", default="data", show_default=True, help="Root data directory")
+@click.option(
+    "--fits-wind",
+    default="data/fits-wind.json",
+    show_default=True,
+    help="Wind fits JSON",
+)
+@click.option(
+    "--fits-solar",
+    default="data/fits-solar.json",
+    show_default=True,
+    help="Solar fits JSON",
+)
+@click.option(
+    "--assignment",
+    default="data/assignment.json",
+    show_default=True,
+    help="Assignment JSON (unmatched plants)",
+)
+@click.option(
+    "--output-dir",
+    default="data",
+    show_default=True,
+    help="Directory to write inference_<date>.json",
+)
+@click.option(
+    "--bucket",
+    default=None,
+    envvar="GCS_BUCKET",
+    help="GCS bucket name to upload result (reads GCS_BUCKET env var if not set).",
+)
+def infer(
+    date_str: str | None,
+    lag: int,
+    data_dir: str,
+    fits_wind: str,
+    fits_solar: str,
+    assignment: str,
+    output_dir: str,
+    bucket: str | None,
+) -> None:
+    """Estimate plant-level generation for a given day and store as JSON blob."""
+    from prism.inference import run_inference
+
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
+
+    if date_str is None:
+        date_str = (date.today() - timedelta(days=lag)).isoformat()
+
+    click.echo(f"Running inference for {date_str}")
+
+    data_path = Path(data_dir)
+    result = run_inference(
+        date_str=date_str,
+        data_path=data_path,
+        fits_wind_path=Path(fits_wind),
+        fits_solar_path=Path(fits_solar),
+        assignment_path=Path(assignment),
+    )
+
+    # Save locally
+    out_path = Path(output_dir) / f"inference_{date_str}.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(result, indent=2))
+    click.echo(f"Saved to {out_path}")
+
+    # Upload to GCS if bucket specified
+    if bucket:
+        import gcsfs
+
+        dest = f"{bucket}/inference_{date_str}.json"
+        click.echo(f"Uploading to gs://{dest} ...")
+        fs = gcsfs.GCSFileSystem()
+        with fs.open(dest, "w") as fp:
+            json.dump(result, fp)
+        click.echo("Upload complete.")
 
 
 def main() -> None:
