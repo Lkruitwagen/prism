@@ -1,5 +1,6 @@
 name = "prism"
 compatibility_date = "2024-01-01"
+account_id = "a81cb00d06eea8e719375da4ee282d43"
 
 [site]
 bucket = "./dist"
