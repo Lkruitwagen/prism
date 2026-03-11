@@ -1,0 +1,433 @@
+,dukes_site_name,bm_unit_id
+0,Drax Power Station Biomass Units,T_DRAXX-4
+1,Drax Power Station Biomass Units,T_DRAXX-3
+2,Drax Power Station Biomass Units,T_DRAXX-1
+3,Drax Power Station Biomass Units,T_DRAXX-6
+4,Drax Power Station Biomass Units,T_DRAXX-5
+5,Drax Power Station Biomass Units,T_DRAXX-2
+6,Drax Power Station Biomass Units,T_DRAXX-10G
+7,Drax Power Station Biomass Units,T_DRAXX-9G
+8,Drax Power Station Biomass Units,T_DRAXX-12G
+9,Pembroke,T_PEMB-51
+10,Pembroke,T_PEMB-41
+11,Pembroke,T_PEMB-31
+12,Pembroke,T_PEMB-21
+13,Pembroke,T_PEMB-11
+14,Staythorpe,T_STAY-1
+15,Staythorpe,T_STAY-2
+16,Staythorpe,T_STAY-3
+17,Staythorpe,E_STAYD-1
+18,Staythorpe,T_STAY-4
+19,Dinorwig Power Station,T_DINO-6
+20,Dinorwig Power Station,T_DINO-5
+21,Dinorwig Power Station,T_DINO-4
+22,Dinorwig Power Station,T_DINO-3
+23,Dinorwig Power Station,T_DINO-2
+24,Dinorwig Power Station,T_DINO-1
+25,Grain,T_GRAI-7
+26,Grain,T_GRAISC-1
+27,Grain,T_GRAI1G
+28,Grain,T_GRAI4G
+29,Grain,T_GRAI-S
+30,Grain,T_GRAISC-2
+31,Grain,T_GRAI-6
+32,Grain,T_GRAI-8
+33,Didcot B,T_DIDCB6
+34,Didcot B,E_DIDCBD-1
+35,Didcot B,T_DIDCB5
+36,Hornsea 02,T_HOWBO-2
+37,Hornsea 02,T_HOWBO-3
+38,Hornsea 02,T_HOWBO-1
+39,Connahs Quay,T_CNQPS-2
+40,Connahs Quay,T_CNQPS-3
+41,Connahs Quay,T_CNQPS-4
+42,Connahs Quay,T_CNQPS-1
+43,EP SHB LTD,T_SHBA-1
+44,EP SHB LTD,T_SHBA-2
+45,West Burton CCGT,T_WBURB-1
+46,West Burton CCGT,T_WBURB-3
+47,West Burton CCGT,T_WBURB-2
+48,VPI,T_HUMR-1
+49,Heysham 2,T_HEYM27
+50,Heysham 2,T_HEYM2-D
+51,Heysham 2,T_HEYM28
+52,Seabank Power Ltd,E_SEAB-2
+53,Seabank Power Ltd,E_SEAB-1
+54,Seabank Power Ltd,T_SEAB-2
+55,Seabank Power Ltd,T_SEAB-1
+56,Hornsea 01,T_HOWAO-1
+57,Hornsea 01,T_HOWAO-3
+58,Hornsea 01,T_HOWAO-2
+59,Torness,T_TORN-1
+60,Torness,T_TORN-2
+61,Torness,T_TORN-D
+62,Saltend Power Station,T_SCCL-2
+63,Saltend Power Station,T_SCCL-3
+64,Saltend Power Station,T_SCCL-1
+65,Sizewell B,T_SIZB-2
+66,Sizewell B,T_SIZB-D
+67,Sizewell B,T_SIZB-1
+68,Hartlepool,T_HRTL-1
+69,Hartlepool,T_HRTL-2
+70,Peterhead,T_PEHED-1
+71,Peterhead,T_PEHE-1
+72,Seagreen,T_SGRWO-4
+73,Seagreen,T_SGRWO-1
+74,Seagreen,T_SGRWD-1
+75,Seagreen,T_SGRWO-5
+76,Seagreen,T_SGRWO-2
+77,Seagreen,T_SGRWO-3
+78,Seagreen,T_SGRWO-6
+79,Heysham 1,T_HEYM12
+80,Heysham 1,T_HEYM11
+81,Spalding Energy Company Ltd,T_SPLN-1
+82,Moray Offshore Windfarm East Limited,T_MOWEO-2
+83,Moray Offshore Windfarm East Limited,T_MOWEO-1
+84,Moray Offshore Windfarm East Limited,T_MOWEO-3
+85,EP Langage Ltd,T_LAGA-1
+86,Marchwood Power,T_MRWD-1
+87,Carrington Power,T_CARR-2
+88,Carrington Power,T_CARR-1
+89,Moray Offshore Windfarm West Limited,T_MOWWO-1
+90,Moray Offshore Windfarm West Limited,T_MOWWO-2
+91,Moray Offshore Windfarm West Limited,T_MOWWO-3
+92,Moray Offshore Windfarm West Limited,T_MOWWO-4
+93,Triton Knoll,T_TKNWW-1
+94,Triton Knoll,T_TKNEW-1
+95,Severn Power Ltd,T_SVRP-10
+96,Severn Power Ltd,T_SVRP-20
+97,Keadby 2,T_KEAD-2
+98,Rocksavage Power Company Ltd,T_ROCK-1
+99,Damhead Creek,T_DAMC-1
+100,Coryton Energy Company Ltd,T_COSO-1
+101,Medway,T_MEDP-1
+102,Keadby,T_KEADGT-3
+103,Keadby,T_KEAD-1
+104,Little Barford,E_LBARD-1
+105,Little Barford,T_LBAR-1
+106,Rye House,T_RYHPS-1
+107,East Anglia One,T_EAAO-2
+108,East Anglia One,T_EAAO-1
+109,London Array,T_LARYW-4
+110,London Array,T_LARYW-1
+111,London Array,T_LARYW-2
+112,London Array,T_LARYW-3
+114,Killingholme,T_KILLPG-2
+115,Killingholme,T_KILLPG-1
+116,Killingholme,T_KILLSC-1
+117,Killingholme,T_KILLSC-2
+118,Beatrice Offshore windfarm,T_BEATD-1
+119,Beatrice Offshore windfarm,T_BEATO-4
+120,Beatrice Offshore windfarm,T_BEATO-2
+121,Beatrice Offshore windfarm,T_BEATO-3
+122,Beatrice Offshore windfarm,T_BEATO-1
+123,Gwynt y Mor,T_GYMRD-W10
+124,Gwynt y Mor,T_GYMRD-E11
+125,Gwynt y Mor,T_GYMR-26
+126,Gwynt y Mor,T_GYMR-17
+127,Gwynt y Mor,T_GYMRD-16
+128,Gwynt y Mor,T_GYMR-15
+129,Gwynt y Mor,T_GYMR-28
+130,Gwynt y Mor,T_GYMRD-E10
+131,Gwynt y Mor,T_GYMRD-W11
+132,Race Bank,T_RCBKO-1
+133,Race Bank,T_RCBKO-2
+134,Dogger Bank A,T_DBAWD-1
+135,Dogger Bank A,T_DBAWO-5
+136,Dogger Bank A,T_DBAWO-2
+137,Dogger Bank A,T_DBAWO-3
+138,Dogger Bank A,T_DBAWO-4
+139,Dogger Bank A,T_DBAWO-1
+140,Greater Gabbard,T_GRGBW-1
+141,Greater Gabbard,T_GRGBW-2
+142,Greater Gabbard,T_GRGBW-3
+143,NNG,T_NNGAD-1
+144,NNG,T_NNGAO-1
+145,NNG,T_NNGAO-2
+146,Cottam Development Centre,T_CDCL-1
+147,Viking Wind Farm,T_VKNGW-1
+148,Viking Wind Farm,T_VKNGW-2
+149,Viking Wind Farm,T_VKNGW-3
+150,Viking Wind Farm,T_VKNGW-4
+151,Cruachan,T_CRUAD-1
+152,Cruachan,T_CRUA-4
+153,Cruachan,T_CRUA-1
+154,Cruachan,T_CRUA-3
+155,Cruachan,T_CRUA-2
+156,Shoreham,E_SHOS-1
+157,Great Yarmouth,E_GYAR-1
+158,Great Yarmouth,E_GYARD-1
+159,Lynemouth Power Limited,E_LYNE-1
+161,Enfield,T_EECL-1
+162,Corby Power Station,E_CORB-1
+163,Rampion,T_RMPNO-1
+164,Rampion,T_RMPNO-2
+165,Kings Lynn,E_KLYN-A-1
+166,West of Duddon Sands,T_WDNSO-2
+167,West of Duddon Sands,T_WDNSO-1
+168,Walney 02,T_WLNYO-2
+169,Walney 01,T_WLNYW-1
+170,Ffestiniog Power Station,T_FFES-1
+171,Ffestiniog Power Station,T_FFES-2
+172,Ffestiniog Power Station,T_FFES-3
+173,Ffestiniog Power Station,T_FFES-4
+174,Ffestiniog Power Station,T_FFESST1
+175,Galloper,T_GANW-24
+176,Galloper,T_GANW-22
+177,Galloper,T_GANW-13
+178,Galloper,T_GANW-11
+179,Walney 03,T_WLNYO-3
+180,Walney 04,T_WLNYO-3
+181,Whitelee I,T_WHILW-1
+182,Thanet,T_THNTO-2
+183,Thanet,T_THNTO-1
+184,Spalding Expansion OCGT,T_SEEL-1
+185,Foyers Pumped Storage,T_FOYE-1
+186,Foyers Pumped Storage,T_FOYE-2
+187,Lincs,T_LNCSW-1
+188,Lincs,T_LNCSW-2
+189,Burbo Extension,T_BRBEO-1
+190,Peterborough Power Station,E_PETEM1
+191,South Kyle,T_SOKYW-1
+192,Kilgallioch,T_KLGLW-1
+193,Pen Y Cymoedd,T_PNYCW-1
+194,Stronelairg Wind Farm,T_STLGW-3
+195,Stronelairg Wind Farm,T_STLGW-1
+196,Stronelairg Wind Farm,T_STLGW-2
+197,Humber Gateway,T_HMGTO-1
+198,Humber Gateway,T_HMGTO-2
+199,Whitelee II,T_WHILW-2
+200,Westermost Rough,T_WTMSO-1
+201,Clyde Windfarm (North),T_CLDNW-1
+202,Clyde Windfarm (Central),T_CLDCW-1
+203,Griffin Wind Farm,T_GRIFW-1
+204,Griffin Wind Farm,T_GRIFWD-1
+205,Griffin Wind Farm,T_GRIFW-2
+206,Dorenell,T_DOREW-2
+207,Dorenell,T_DOREW-1
+208,Gunfleet Sands 02,T_GNFSW-1
+209,Gunfleet Sands 02,T_GNFSW-2
+210,Gunfleet Sands 01,T_GNFSW-1
+211,Gunfleet Sands 01,T_GNFSW-2
+212,Sheringham Shoal BMU 2,T_SHRSW-2
+213,Sheringham Shoal BMU 1,T_SHRSW-1
+214,Sloy,M_SLOY-4
+215,Sloy,T_SLOY-2
+216,Sloy,M_SLOY-1
+217,Sloy,T_SLOY-3
+218,Sloy,T_SLOYD-1
+219,Ormonde,T_OMNDD-1
+220,Ormonde,T_OMNDW-1
+221,Fallago Rig,T_FALGW-1
+222,Fallago Rig,T_FALGD-1
+223,Taylors Lane,E_TAYL-S
+224,Taylors Lane,E_TAYL3G
+225,Taylors Lane,E_TAYL2G
+226,Indian Queens Power Ltd,E_INDQ-2
+227,Indian Queens Power Ltd,T_INDQ-1
+228,Cowes,E_COWED
+229,Cowes,E_COWE1
+230,Cowes,E_COWE2
+231,Crystal Rig II,T_CRYRD-2
+232,Crystal Rig II,T_CRYRW-2
+233,Harestanes,T_HRSTW-1
+234,Clyde Windfarm (South),T_CLDSW-1
+235,Black Law I,T_BLLA-1
+236,Wilton International,T_WILCT-1
+237,Arecleoch,T_ARCHW-1
+238,"Hadyard Hill Windfarm - A,C",T_HADHW-1
+240,Bhlaraidh Wind Farm,T_BHLAW-1
+241,Beinneun Wind Farm,T_BEINW-1
+242,Dudgeon BMU 1,T_DDGNO-1
+243,Dudgeon BMU 3,T_DDGNO-3
+244,Dudgeon BMU 4,T_DDGNO-4
+245,Glendoe Hydro Power Station,T_GLNDO-1
+246,Heartlands,E_FDUN-1
+247,Didcot GT,E_DIDCD
+248,Didcot GT,E_DIDC2G
+249,Didcot GT,E_DIDC1G
+250,Didcot GT,E_DIDC4G
+251,Didcot GT,E_DIDC3G
+254,Aberdeen,T_ABRBO-1
+255,Clocaenog Forest,C__DEDGE014
+256,Dunmaglass Wind Farm,T_DUNGW-1
+257,Farr,T_FARR-1
+258,Farr,T_FARR-2
+261,Dudgeon BMU 2,T_DDGNO-2
+262,Barrow,T_BOWLW-1
+263,Burbo,E_BURBO
+265,Robin Rigg West,T_RRWW-1
+266,Kype Muir Wind Farm,T_KPMRW-1
+267,Robin Rigg East,T_RREW-1
+268,Aikengall IIA,T_AKGLW-3
+270,FM2,T_FERR-2
+271,FM1,T_FERR-1
+272,Mid Hill,2__PSTAT002
+273,Errochty,T_ERRO-3
+274,Errochty,T_ERRO-2
+275,Errochty,T_ERRO-1
+277,Sutton Bridge,T_SUTBS-1
+279,Braes of Doune Wind Farm,E_BRDUW-1
+280,Gordonbush Wind Farm,T_GORDD-1
+281,Gordonbush Wind Farm,T_GORDW-1
+282,Burwell,E_BURWB-2
+284,Corriegarth,T_CGTHW-1
+286,Fasnakyle,E_FASN-4
+287,Fasnakyle,T_FASN-1
+288,Fasnakyle,E_FASN-3
+289,Fasnakyle,T_FASN-2
+290,Lochluichart,T_LCLTW-1
+291,Dersalloch,T_DRSLW-1
+293,Kilbraur,T_KILBW-1
+294,Kilbraur,T_KILBWD-1
+295,Breach Solar,T_BRCHS-1
+296,Berry Burn,E_BRYBW-1
+298,Strathy North,T_STRNW-1
+299,Moy,E_MOYEW-1
+300,Galawhistle,T_GLWSW-1
+302,Millennium,T_MILWWD-1
+303,Millennium,T_MILWW-1
+304,Pauls Hill,2__PENEC002
+305,Black Law II,T_BLLA-2
+306,Crystal Rig,T_CRYRD-2
+307,Crystal Rig,T_CRYRW-2
+310,Brockloch Rig,T_WISTW-2
+311,Clunie,M_CAS-CLU01
+312,Markinch,E_MARK-1
+314,Aikengall II,T_AKGLW-2
+322,Mark Hill,T_MKHLW-1
+326,Hythe,E_HYTHE
+328,Baillie,E_BABAW-1
+329,Blackcraig,T_BLKWW-1
+332,Middle Muir Wind Farm,T_MIDMW-1
+333,Rothes,2__PENEC001
+335,Cumberhead Wind Farm,T_CUMHW-1
+336,Camster,2__PEDGE003
+337,Chickerell,E_CHICK-1
+338,Croydon,E_CROYD-2
+339,Exeter,E_EXETR-2
+340,Viking,E_VKING-2
+341,Beinn an Tuirc III,E_BTUIW-3
+342,Grain (OCGT),T_GRAI1G
+343,Grain (OCGT),T_GRAI4G
+344,Derby,E_DERBY-1
+349,Burghfield,E_BURGH-1
+354,Wilton 11,T_WILCT-1
+355,Peterborough Power Station PPL2 Gas Engines,E_PETEM3
+356,Corriemoillie,T_CRMLD-1
+357,Corriemoillie,T_CRMLW-1
+358,Glen Kyllachy,T_GLNKW-1
+359,Hill of Towie Wind Farm (GB),E_HLTWW-1
+362,Crossdykes Wind Farm,T_CRDEW-2
+363,Crossdykes Wind Farm,T_CRDEW-1
+366,Gordonbush Ext,T_GORDW-2
+372,Douglas West,T_DOUGW-1
+375,Beinn an Tuirc II,E_BTUIW-2
+377,Windy Rig,T_WDRGW-1
+378,A'Chruach,T_ACHRW-1
+379,Dalquhandy,T_DALQW-1
+381,Rothes II,2__PSTAT001
+382,Edinbane,T_EDINW-1
+384,Blyth,E_BODD-1
+385,Blyth,E_BODW-1
+387,Clachan,T_CLACD-1
+388,Clachan,E_CLAC-1
+389,Thornhill,E_THRNL-1
+390,Cheshire,E_CHESP-1
+391,Grimsby,E_GRMAP-1
+392,Grimsby,E_GRMBP-1
+393,Airies,E_AIRSW-1
+396,Auchrobert,E_ABRTW-1
+401,TwentyShilling Hill,T_TWSHW-1
+404,Clashindarroch,E_CLDRW-1
+405,Ewe Hill II,T_EWHLW-1
+407,Minsca,E_MINSW-1
+409,Andershaw,E_ASHWW-1
+411,Maentwrog,E_MAEN-1
+412,Blary Hill,E_BLARW-1
+419,Ratcliffe (OCGT),T_RATSGT-2
+420,Ratcliffe (OCGT),T_RATSGT-4
+423,Pines Burn,E_PIBUW-1
+424,Wilton 10 Biomass,T_WILCT-1
+425,Goole Fields A,E_GFLDW-1
+427,Mynydd y Gwair,C__KEDGE004
+433,Sanquhar,T_SANQW-1
+434,Sanquhar,T_SANQD-1
+453,Hare Hill II,E_HRHLW-1
+454,Dun Law II,T_DNLWW-1
+455,Beinn Tharsuinn,E_BETHW-1
+464,Whiteside Hill,T_WHIHW-1
+472,Toddleburn Windfarm,T_TDBNW-1
+476,Bad a Cheo,T_BDCHW-1
+478,Hagshaw Hill II,T_HAHAW-1
+479,Hagshaw Hill II,T_HAGHW-2
+485,Glens of Foudland,E_GLOFW-1
+488,Glenchamber Wind Farm (GB),E_GLCHW-1
+490,Assel Valley,E_ASLVW-1
+492,Minnygap (GB),T_MYGPW-1
+494,Rosehall,2__PEDGE004
+511,Burn of Whilk,E_BNWKW-1
+514,Freasdail (GB),T_FSDLW-1
+519,Glen App,T_GNAPW-1
+523,Tir Mostyn & Foel Goch Ltd,2__DRWED001
+535,Cour Wind Farm,T_COUWW-1
+536,Rheidol Hydro Scheme Gen 3,E_RHEI-1
+537,Rheidol Hydro Scheme Gen 2,E_RHEI-1
+556,An Suidhe,T_ANSUW-1
+588,Tullo,E_TULWW-1
+592,High Head,E_DOLG_H
+593,High Head,E_DOLG_HD
+594,Little Barford GT,T_LBAR-1G
+598,"Finlarig Power Station - A,G",T_FINL-1
+627,Clachan Flats,E_CLFLW-1
+631,"Nant Power Station - A,E",T_NANT-1
+646,Tullymurdoch,E_TLYMW-1
+648,Charity Farm - CfD,C__DTGPL001
+663,Crystal Rig III,T_CRYRW-3
+669,Rheidol Hydro Scheme Gen 1,E_RHEI-S
+670,Rheidol Hydro Scheme Gen 1,E_RHEI-1
+683,Gordonstown Hill,E_GDSTW-1
+699,Gunfleet Sands Demo,E_GNFSW-3
+703,Moor House Wind Farm,C__FENRG003
+786,Deanie,M_CAS-BEU01
+787,"Aigas Power Station - A,E",M_CAS-BEU01
+788,"Kilmorack Power Station -A,E",M_CAS-BEU01
+789,Culligran Power Station Unit 2 - A,M_CAS-BEU01
+790,"Fasnakyle Compensation Generator - A, C",M_CAS-BEU01
+791,"Mullardoch Power Station - A,C",M_CAS-BEU01
+792,"Cuaich Power Station - A,C",M_CAS-CLU01
+793,Tummel,M_CAS-CLU01
+794,Rannoch,M_CAS-CLU01
+795,Loch Ericht Power Station - A,M_CAS-CLU01
+796,Trinafour Power Station - A,M_CAS-CLU01
+797,Gaur Power Station - A,M_CAS-CLU01
+798,Clunie Dam - A,M_CAS-CLU01
+799,Pitlochry Power Station - A,M_CAS-CLU01
+800,Lochay,M_CAS-KIL01
+801,"Cashlie Power Station - A,C",M_CAS-KIL01
+802,Lubreoch Power Station - A,M_CAS-KIL01
+803,Lednock Power Station - A,M_CAS-KIL01
+804,"Dalchonize Power Station-A,C ",M_CAS-KIL01
+805,"St Fillans Power Station - A, G",M_CAS-KIL01
+806,"Torr Achilty Power Station - A,E",M_CAS-CON01
+807,Orrin Power Station- A,M_CAS-CON01
+808,Orrin Dam - A,M_CAS-CON01
+809,Luichart Dam - A,M_CAS-CON01
+810,"Mossford Power Station - A,G",M_CAS-CON01
+811,Achanalt Power Station - A,M_CAS-CON01
+812,"Grudie Bridge Power Station - A, G",M_CAS-CON01
+813,Grudie,M_CAS-CON01
+814,Luichart,M_CAS-CON01
+815,Glenmoriston,M_CAS-MOR01
+816,"Invergarry Power Station - A,E",M_CAS-MOR01
+817,"Ceannacroc Power Station - A, E",M_CAS-MOR01
+818,"Quoich Power Station - A, E, G",M_CAS-MOR01
+819,Livishie Power Station - A,M_CAS-MOR01
+820,Kendoon,2__NHPOW003
+821,Glenlee,2__NHPOW003
+822,Tongland,2__NHPOW002
+823,Earlstoun,2__NHPOW002
+824,Carsfad,2__NHPOW002
+825,Drumjohn,2__NHPOW002
+826,Bonnington,2__NHPOW004
+827,Stonebyres,2__NHPOW004
