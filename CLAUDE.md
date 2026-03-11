@@ -123,3 +123,17 @@ Six scripts in `scripts/`:
 - `gcsfs` (already a dep) handles GCS upload via Application Default Credentials set by the auth action
 - ERA5 is fetched fresh each day (one day = small, fast); 10-day default lag ensures archive availability
 - For DatetimeIndex filtering by date: `series[series.index.date == d]` (not `.iloc` with boolean array)
+
+### UI notes (TASK 08)
+- `ui/` — Vite + React + TypeScript single-page app; root at `ui/`
+- `scripts/prepare_plants_json.py` — generates `data/plants.json` from `dukes_clean.csv` + `groups.json`; run this before deploying
+- `ui/src/config.ts` — `VITE_DATA_BASE_URL` env var controls data source; empty = serve from `/data/` (local); set to GCS public bucket URL for production
+- `ui/public/data` — symlink to `../../data` for local dev (serves plants.json, groups.json, inference JSON)
+- `ui/public/im.png` — logo copy (original stays at `ui/im.png`)
+- Data flow: `plants.json` + `groups.json` (static) + `inference_YYYY-MM-DD.json` (per-date, from GCS)
+- `groups.json` keys used: `groups_to_bmunit`, `groups_to_dukes_idx`, `dukes_idx_to_group`, `bm_unit_to_group`
+- Map: Leaflet dark basemap (CartoDB dark_all), CircleMarkers sized by sqrt(capacity_mw), colored by DUKES Technology
+- Chart: Recharts LineChart — actual (B1610 sum), estimated (plant_generation sum), residual (actual − estimated); 48 half-hour periods
+- Cloudflare Pages deployment: `npm run build` in `ui/`; output at `ui/dist/`; `wrangler.toml` present
+- Tech colors: solar=yellow, wind=green, bioenergy=brown, nuclear=purple, hydro=blue, pumped-hydro=cyan, fossil-fuel=dark-grey, OCGT=grey
+- `plant_generation` entries in inference JSON only cover wind + solar (fitted assets); DUKES map shows all 8 technologies
