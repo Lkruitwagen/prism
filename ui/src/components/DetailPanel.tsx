@@ -76,7 +76,7 @@ export function DetailPanel({
   return (
     <div className="detail-panel">
       <div className="logo-bar">
-        <img src="/im.png" alt="PRISM" className="logo" />
+        <img src="/im-inv.png" alt="PRISM" className="logo" />
         <a
           href="https://github.com/Lkruitwagen/prism"
           target="_blank"
